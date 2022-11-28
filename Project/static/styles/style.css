@@ -1,0 +1,112 @@
+body { 
+  margin: 0;
+  padding: 0;
+}
+
+span {
+  font-style: italic;
+}
+/* Контент */
+.list-conteiner {
+  /* звернення до контейнеру з планом сторінки   */
+  /*  */
+  display: inline-block;
+  border-style: solid; /* закидає текст в блок */
+  border-width: 0.5px; /* товщина нашої рамки */
+  padding-right: 20px; /* Відступ від тексту до рамки  */
+}
+
+
+.list-conteiner > p {
+  /* Звернення до тегу р який в тегові div.
+    Потрібно так , так як при змертанні до контейнера загалом змінить весь текст */
+  text-align: center;
+  font-weight: bold;   /* Робить текст жирним */
+}
+
+.img-conteiner { 
+    float: right; /* Поміщає картинку справа і робить так щоб текст її обтікав  */
+    padding: 5px; /* Відступ від краю сторінки*/
+    border-style: solid; /* Рамка навколо фото */
+    border-width: 0.5px;/* товщина нашої рамки */
+    margin-left: 10px;/* Відступ між текстом і картинкою*/
+}
+
+.img-conteiner>div { 
+display: flex;  /* розтягує фото по всьому контейнеру  */
+align-items: center; /* розміщає контент блоку по центру.Дана команда канає тільки при використанні flex-direction: column  */
+flex-direction: column;   /* весь контент буде столбіком  */
+
+}
+
+.logo-html { /* в файлі HTML присвоїли фотограії даний клас і тут налаштовуємо розміри  */
+
+    max-width: 70px; 
+}
+
+/* Верхня панель */
+.nav-container { 
+  display: flex;
+  justify-content: space-between;/* Розділяє наші елементи (2 списки) */
+  background-color: rgb(149, 174, 243);
+}
+ /*  */
+.nav-container>nav>ul {  /*Робить зі столбіка строку (відображення)  */
+  display: flex; 
+  list-style: none; /* Забирає крапки або цифри біля пунктів тексту */
+  align-items: center; /* Робить вікно пошуку по центру блоку */
+  margin: 0px; /* Відступ від верхнього краю */
+  padding: 0px; /* Відступ від лівого краю */
+}
+
+
+.nav-container>nav>ul>li { /* Робить блочний вигляд для контенту з тегами  nav>ul>li */
+  display: block;
+  padding: 10px; /* Відступ від контейнера до наповнення */
+  border-style: solid;  /* Рамка */
+  border-width: 0.5px; /* Ширина рамки */
+  
+}
+
+
+
+@media (max-width: 900px){  /* Для девайсів з розширенням від 1-900рх буде використовуватись стилі які написані в даному запиті.Для 901рх будуть використовуватись ті що вище */
+  .nav-container {
+    flex-direction: column;/* Робить так , що частина блоків падає під інші блоки при зменшенні екрану , а не прилипає до інших  */
+  }
+}
+
+.text-page { 
+  padding-left: 15px;  /* відступ від панелі до тексту */
+}
+
+.page{
+  display: flex;
+  justify-content: center;
+}
+
+.header {
+width: 14%; /* Виділяємо % під навігаційну панель  */
+background-color: aqua;
+}
+
+.section {
+width: 82%; /* Виділяємо % під контент */
+}
+
+.header>ol {
+  list-style: none; /* Забирає нумерацію*/
+  border-bottom-style:  solid; /* Нижнє підкреслення блоку (границя)*/
+  border-width: 0.5px;
+  margin: 10px;
+  padding: 0; /*  */
+  padding-bottom: 10px; /* Відступ від краю блоку */
+}
+
+.header>div { 
+  width: 100%;
+}
+/*  */
+.header>div>img { 
+  width: 100%;   /* Маштабує нашу фотку під розмір контейнера  */
+}
